@@ -20,7 +20,9 @@ body{
   font-family: 'Lora', serif;
   box-sizing: border-box;
   position: relative;
-  background: #F4F4F5;
+  background: #B24592;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F15F79, #B24592);
+	background: linear-gradient(to right, #F15F79, #B24592);
 }
 
 a{
