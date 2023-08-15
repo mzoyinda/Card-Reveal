@@ -1,32 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Header,Ingredients } from '../style';
-import {content} from "./FoodData";
-
 
 import {
   PiArrowFatLinesLeftFill,
   PiArrowFatLinesRightFill,
 } from "react-icons/pi";
 
-const TsCard = () => {
-  const [index, setIndex] = useState(1);
 
-
-const handleIncrease = () =>{
-  if(index !== 1){
-    setIndex(index+1)
-  }else{
-    console.log("end of the stack")
-  }
+type CardProps = {
+ content: {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+}[],
+index:number,
+handleIncrease:() => void,
+handleDecrease: () => void
 }
 
-const handleDecrease = () =>{
-  if(index !== 0){
-    setIndex(index-1)
-  }else{
-    console.log("end of the stack")
-  }
-}
+const TsCard = ({content, index, handleIncrease, handleDecrease} : CardProps) => {
 
   return (
     <div>
@@ -36,7 +29,7 @@ const handleDecrease = () =>{
             <button onClick={handleDecrease} disabled={index === 0 ? true : false}>
               <PiArrowFatLinesLeftFill />
             </button>
-            <button onClick={handleIncrease} disabled={index === 1 ? true : false}>
+            <button onClick={handleIncrease} disabled={index === 2 ? true : false}>
               <PiArrowFatLinesRightFill />
             </button>
           </div>

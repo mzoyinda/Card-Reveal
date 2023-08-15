@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Header,Ingredients } from '../style';
 
 import {
@@ -8,25 +7,7 @@ import {
 
 
 
-const JsCards = ({content}) => {
-const [index, setIndex] = useState(0);
-
-
-const handleIncrease = () =>{
-  if(index !== 2){
-    setIndex(index+1)
-  }else{
-    console.log("end of the stack")
-  }
-}
-
-const handleDecrease = () =>{
-  if(index !== 0){
-    setIndex(index-1)
-  }else{
-    console.log("end of the stack")
-  }
-}
+const JsCards = ({content, index, handleIncrease, handleDecrease}) => {
 
   return (
     <div>
